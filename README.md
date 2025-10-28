@@ -51,6 +51,13 @@ curl -v http://localhost:8080
 {"pid":1,"ruby_version":"3.4.7","ruby_platform":"aarch64-linux-gnu","puma":"6.4.2","rack":"3.0.8","allocator":"jemalloc (via LD_PRELOAD)","ld_preload":"/usr/lib/libjemalloc.so.2","malloc_conf":"background_thread:true,metadata_thp:auto,dirty_decay_ms:500,muzzy_decay_ms:500","time":"2025-10-28T16:05:49Z"}%
 ```
 
+```
+docker run --rm --entrypoint ruby \
+  -e LD_PRELOAD=/usr/lib/libjemalloc.so.2 \
+  jemalloc-ruby-ex -e 'puts File.read("/proc/self/maps").include?("jemalloc") ? "jemalloc: ENABLED" : "jemalloc: NOT FOUND"'
+jemalloc: ENABLED
+```
+
 ## RSS Growth & Retained Memory Comparison Test
 
 **60 second glibc baseline**
