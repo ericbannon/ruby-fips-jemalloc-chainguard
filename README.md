@@ -101,3 +101,6 @@ jq -s '[{alloc:"glibc",rss:.[0].rss_delta_mb,time:.[0].time_s},
   }
 ]
 ```
+
+Note: Jemalloc can be tuned for either minimal memory footprint or maximum throughput
+
