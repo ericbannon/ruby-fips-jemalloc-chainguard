@@ -1,0 +1,15 @@
+{
+  "ruby_version": "3.4.7",
+  "ruby_platform": "aarch64-linux-gnu",
+  "threads": 4,
+  "iters_per_thread": 3000000,
+  "str_size": 1024,
+  "keep_ratio": 17,
+  "rounds": 20,
+  "time_s": 70.922,
+  "rss_before_mb": 64.84,
+  "rss_after_mb": 775.11,
+  "rss_delta_mb": 710.27,
+  "ld_preload": "",
+  "malloc_conf": "background_thread:true,metadata_thp:auto,dirty_decay_ms:500,muzzy_decay_ms:500"
+}
